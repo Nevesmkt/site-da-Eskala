@@ -568,5 +568,21 @@
     <span>Crescimento digital com estratégia.</span>
   </footer>
 
+
+<script>
+  // Bloqueia o clique com botão direito (esconde o menu de Inspecionar)
+  document.addEventListener('contextmenu', (e) => e.preventDefault());
+  // Bloqueia atalhos de teclado comuns de desenvolvedores (F12, Ctrl+Shift+I, etc.)
+  document.onkeydown = (e) => {
+    if (
+      e.keyCode === 123 || // F12
+      (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+      (e.ctrlKey && e.shiftKey && e.keyCode === 74) || // Ctrl+Shift+J
+      (e.ctrlKey && e.keyCode === 85) // Ctrl+U (Exibir código-fonte)
+    ) {
+      return false;
+    }
+  };
+</script>
 </body>
 </html>
